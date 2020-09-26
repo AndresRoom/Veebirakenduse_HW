@@ -23,11 +23,12 @@
     <h3>Please Log in</h3>
         
     <form action = "index.html" method ="post">
-    <input type="hidden" name = "session" value = "<?php echo session_id();?>">
 
           <input type="text" name = "first_name"><br>
           <input type="text" name = "last_name"><br>
-          <input type="submit" value="Submit">
+          <div class="box-1">
+              <button type="submit" class="button">Log in</button>
+          </div>
         </form>
         <a href="" >Forgot password?</a>
         <br>

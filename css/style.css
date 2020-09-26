@@ -59,3 +59,10 @@ body{ background-color: #3a85fc;}
   }
 
 }
+.button {
+  background-color:  #3a85fc;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+
+}

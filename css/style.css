@@ -18,6 +18,7 @@
   margin-left: auto;
   width: 30%;
   height: 100%;
+  min-width: 200px;
 }
 .box-1 {
   text-align: center;
@@ -57,7 +58,6 @@ body{ background-color: #3a85fc;}
     width: 100%;
     height: 80%;
   }
-
 }
 .button {
   background-color:  #3a85fc;
@@ -65,4 +65,9 @@ body{ background-color: #3a85fc;}
   color: white;
   padding: 10px 15px;
 
+}
+.resizeinputbar {
+  width: 94%;
+  min-width: 25px;
+  max-width: 1200px;
 }

@@ -1,37 +1,45 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-
+<html lang="en" dir="ltr">
+  <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/Utilitys.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/html.css">
-    <title>Welcome to PostIt! Please log in</title>
-
-</head>
-
-<body>
-    <div class="container-2">
-      <div>
-          <img src="images/login/images.jpg" width="20%" height="80%" alt="">
-      </div>
-      <h3>Welcome to postIt!</h3>
-      <a href="" >Create an Account</a>
-      <h5>or</h5>
-      <h3>Please Log in</h3>
-
-      <form action = "index.html" method ="post">
-
-          <input type="text" name = "first_name" class="resizeinputbar" placeholder="Username"><br>
-          <input type="text" name = "last_name" class="resizeinputbar" placeholder="Password"><br>
-          <div class="box-1">
-              <button type="submit" class="button">Log in</button>
-          </div>
-        </form>
-        <a href="" >Forgot password?</a>
-        <br>
-        <br>
-    </div>
-</body>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="res/css/style.css">
+    <title>Welcome to postIt! Please Log In</title>
+  </head>
+  <body>
+    <section class="login-page">
+      <section id="login-container">
+        <div>
+          <h1>Welcome to postIt!</h1>
+        </div>
+        <div>
+          <h4>
+            <a href="#">Create an Account</a>
+          </h4>
+        </div>
+        <div>
+          <h4>Or</h4>
+        </div>
+        <div>
+          <h3>Please Log In</h3>
+          <form action="index.html" method="post">
+            <div>
+              <input type="text" name="email" placeholder="Email">
+            </div>
+            <div>
+              <input type="password" name="password" placeholder="Password">
+            </div>
+            <div>
+              <button class="button" type="submit" name="login">Log In</button>
+            </div>
+            <div>
+              <small>
+                <a href="#">Forgot password?</a>
+              </small>
+            </div>
+          </form>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>

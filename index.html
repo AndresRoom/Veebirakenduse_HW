@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="res/css/style.css">
@@ -15,8 +16,28 @@
         <div class="search-container">
           <input type="text" name="search"><button type="button">Search</button>
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+          $(document).ready(function(){
+            $('li').hover(function() {
+              $(this).find('ul li').show();
+            },            
+            function(){
+              $(this).find('ul li').hide();
+            });
+          });
+
+        </script>
+      </ul>
         <div  class="avatar-container">
-          <img src="res/images/avatar.png" class="avatar" alt="Me">
+          <ul class="dropdown">
+            <li><img src="res/images/avatar.png" class="avatar" alt="Me">
+              <ul>
+                 <li><a href=" browse.html">Browse</a></li>
+                 <li><a href="login.html">Log out</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
@@ -74,19 +95,10 @@
           <button type="button" name="like" class="like-button liked">10k</button>
         </div>
       </div>
-      <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
 </div>
 
     </section>
   </body>
 </html>
-
-<script src="node_modules/jquery/jquery.js"></script>
 
 

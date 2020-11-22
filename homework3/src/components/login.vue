@@ -55,18 +55,68 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.login-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+#login-container {
+    background-image: url(../assets/logo.png);
+    background-size: 20% auto;
+    background-repeat: no-repeat;
+    background-position: 15px 15px;
+    min-width: 25%;
+    padding: 45px 45px;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(38, 50, 56, 0.33);
+    text-align: center;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+#login-container form div > input {
+    padding: 8px 16px;
+    margin: 4px 0;
 }
+* {
+    font-family: 'Roboto Slab', serif;
+    outline: none;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #0277bd;
+    color: #263238;
+}
+
 a {
-  color: #42b983;
+    color: #40c4ff;
 }
+button {
+    padding: 8px 16px;
+    margin: 4px 0;
+    color: #ffffff;
+    background-color: #01579b;
+    border: none;
+    border-radius: 4px;
+}
+button:hover {
+    box-shadow: 0 0 5px rgba(38, 50, 56, 0.7);
+    cursor: pointer;
+}
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+header:hover {
+    box-shadow: 0 -20px 30px #4d4d4d;
+}
+
 </style>

@@ -1,9 +1,7 @@
-<template>
+<template >
   <head>
   <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="res/css/style.css">
-  <title>Welcome to postIt! Please Log In</title>
 </head>
 <body>
     <section class="login-page">
@@ -54,14 +52,38 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
+
+* {
+    font-family: 'Roboto Slab', serif;
+    outline: none;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+body {
+
+    background-color: #0277bd;
+    color: #263238;
+}
+
+a {
+    color: #40c4ff;
+}
+
 .login-page {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:center;
 }
+
 #login-container {
     background-image: url(../assets/logo.png);
     background-size: 20% auto;
@@ -73,30 +95,12 @@ export default {
     box-shadow: 0 0 15px rgba(38, 50, 56, 0.33);
     text-align: center;
 }
+
 #login-container form div > input {
     padding: 8px 16px;
     margin: 4px 0;
 }
-* {
-    font-family: 'Roboto Slab', serif;
-    outline: none;
-}
 
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
-
-body {
-    background-color: #0277bd;
-    color: #263238;
-}
-
-a {
-    color: #40c4ff;
-}
 button {
     padding: 8px 16px;
     margin: 4px 0;
@@ -105,16 +109,19 @@ button {
     border: none;
     border-radius: 4px;
 }
+
 button:hover {
     box-shadow: 0 0 5px rgba(38, 50, 56, 0.7);
     cursor: pointer;
 }
+
 header {
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1;
 }
+
 header:hover {
     box-shadow: 0 -20px 30px #4d4d4d;
 }

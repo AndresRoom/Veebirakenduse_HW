@@ -7,8 +7,8 @@ const PostModel = {
         let data = [
             params.userId,
             params.text,
-            params.media.type,
-            params.media.url
+            params.type,
+            params.url
         ];
 
         return query(statement, data, callback);

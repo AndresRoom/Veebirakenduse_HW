@@ -5,11 +5,8 @@ const PostModel = require('../models/PostModel');
 
 
 router.get('/', authorize, (request, response) => {
-
-    // Endpoint to get posts of people that currently logged in user follows or their own posts
-
     PostModel.getAllForUser(request.currentUser.id, (postIds) => {
-
+        console.log(request.currentUser.id);
         if (postIds.length) {
             PostModel.getByIds(postIds, request.currentUser.id, (posts) => {
                 response.status(201).json(posts)
@@ -23,20 +20,43 @@ router.get('/', authorize, (request, response) => {
 });
 
 router.post('/', authorize,  (request, response) => {
-
-    // Endpoint to create a new post
-
+    params = {
+      userId: request.currentUser.id,
+      text: request.body.text,
+      url: request.body.media.url,
+      type: request.body.media.type
+    }
+    PostModel.create(params, () => {
+      response.json({
+        ok:true
+      })
+    })
 });
 
 
 router.put('/:postId/likes', authorize, (request, response) => {
 
-    // Endpoint for current user to like a post
+    let postId = request.params.postId;
+    let userId = request.currentUser.id;
+    PostModel.getLikesByUserIdAndPostId(userId, postId, () => {
+      PostModel.like(userId, postId, () => {
+        response.json({
+          ok:true
+        })
+      })
+    })
 });
 
 router.delete('/:postId/likes', authorize, (request, response) => {
-
-    // Endpoint for current user to unlike a post
+    let postId = request.params.postId;
+    let userId = request.currentUser.id;
+    PostModel.getLikesByUserIdAndPostId(userId, postId, () => {
+      PostModel.unlike(userId, postId, () => {
+        response.json({
+          ok:true
+        })
+      })
+    })
 
 });
 

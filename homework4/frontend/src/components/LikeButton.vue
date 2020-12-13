@@ -22,6 +22,7 @@
             },
             unlike: function () {
                 axios.delete('posts/' + this.post.id + '/likes')
+
                     .then(() => {
                         this.post.liked = false;
                         this.post.likes--

@@ -2,6 +2,7 @@ import {mount, createLocalVue} from '@vue/test-utils'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import Posts from "../../src/components/Posts.vue";
+import {isDate} from "moment";
 
 const localVue = createLocalVue();
 
@@ -102,5 +103,17 @@ describe('Posts', () => {
 
     it('1 == 1', function () {
         expect(true).toBe(true)
+    });
+
+    it('should Test that post create time is displayed in correct format', function () {
+        let postCreateTime = wrapper.find('.main-container.post.post-author small')
+        expect(isDate(postCreateTime)).toBe(true)
+    });
+
+    it('should Test that if post has media property', function () {
+        let img = wrapper.find('.post-image img')
+        let vid = wrapper.find('.post-image video')
+
+        expect(img.exists()).toBe(true) || expect(vid.exists()).toBe(true);
     });
 });

@@ -26,11 +26,19 @@ router.post('/', authorize,  (request, response) => {
       url: request.body.media.url,
       type: request.body.media.type
     }
-    PostModel.create(params, () => {
-      response.json({
-        ok:true
+    if(!request.body.text){
+      response.status(400).json({
+        code: 'PostWihtoutText',
+        message: 'One may not post without contextual text'
       })
-    })
+    }else{
+      PostModel.create(params, () => {
+        response.json({
+          ok:true
+        })
+      })
+    }
+
 });
 
 

@@ -5,6 +5,7 @@ import Posts from "../../src/components/Posts.vue";
 import {isDate} from "moment";
 
 const localVue = createLocalVue();
+const moment = require('moment')
 
 localVue.use(Vuex);
 localVue.use(VueRouter);
@@ -104,13 +105,18 @@ describe('Posts', () => {
     it('1 == 1', function () {
         expect(true).toBe(true)
     });
-
-    it('should Test that post create time is displayed in correct format', function () {
+    it('Should test that exactly as many posts are rendered as contained in testData variable', function(){
+      let amount = testData.length;
+      let actualAmount = wrapper.findAll('.post').length;
+      expect(actualAmount).toBe(amount);
+    });
+    it('Should test that post create time is displayed in correct format', function () {
         let postCreateTime = wrapper.find('.main-container.post.post-author small')
-        expect(isDate(postCreateTime)).toBe(true)
+        expect(moment.isDate(postCreateTime)).toBe(true)
     });
 
-    it('should Test that if post has media property', function () {
+    it('Should test that if post has media property', function () {
+
         let img = wrapper.find('.post-image img')
         let vid = wrapper.find('.post-image video')
 
